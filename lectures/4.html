@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title></title>
+</head>
+<body>
+<h4>1140158</h4>
+<script>
+    // parse input
+    let num = Number(window.location.search.replace('?', '')) + 1;
+
+    // decision (Sieve of Eratosthenes)
+    let simpleNums = [];
+    for (let i = 0; i < num; i++) {
+        simpleNums.push(true);
+    }
+    simpleNums[0] = false;
+    simpleNums[1] = false;
+    simpleNums[2] = true;
+    let answer = 0;
+    for (let i = 2; i < num; i++) {
+        if (!simpleNums[i]) {
+            continue;
+        }
+        answer += 1
+        for (let j = 2 * i; j < num; j += i) {
+            simpleNums[j] = false;
+        }
+    }
+
+    // output
+    document.title = answer;
+</script>
+</body>
+</html>

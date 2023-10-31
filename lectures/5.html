@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title></title>
+</head>
+<body>
+<h4>1140158</h4>
+<script>
+    // parse input
+    let rawArray = window.location.search.replace('?', '');
+    rawArray = rawArray.replace('[', '');
+    rawArray = rawArray.replace(']', '');
+    let arrayOfStr = rawArray.split(',');
+    let nums = [];
+    for (let i = 0; i < arrayOfStr.length; i++) {
+        nums.push(Number(arrayOfStr[i]));
+    }
+
+    // decision
+    nums = nums.sort()
+
+    // output
+    document.title = nums.toString();
+</script>
+</body>
+</html>
